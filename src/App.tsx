@@ -39,8 +39,10 @@ const nextQuestion = () =>{
 return(
   <div className="App">
     <h1>React App</h1>
+    {gameOver || userAnswers.length === TOTAL_QUESTIONS ?(
     <button className="start" onClick= {startQuiz}>Start the Quiz</button>
-<p className="score">Score:</p>
+    ) :null}
+{!gameOver ?<p className="score">Score:</p> :null}
 <p>Loading questions</p>
 <QuestionCard 
 questionNumber={number + 1}
