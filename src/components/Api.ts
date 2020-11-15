@@ -20,6 +20,6 @@ export const fetchQuizQuestions = async(amount: number, difficulty: Difficulty) 
     console.log(data);
     return data.res.map((question: Question) =>({
         ...question,
-        answer: shuffleArray([...question.incorrect_answers, question.correct_answer])
+        answers: shuffleArray([...question.incorrect_answers, question.correct_answer])
     }))
 }
