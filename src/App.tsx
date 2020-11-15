@@ -43,7 +43,8 @@ return(
     <button className="start" onClick= {startQuiz}>Start the Quiz</button>
     ) :null}
 {!gameOver ?<p className="score">Score:</p> :null}
-<p>Loading questions</p>
+{loading ?<p>Loading questions</p> :null}
+{!loading && !gameOver? (
 <QuestionCard 
 questionNumber={number + 1}
 totalQuestions = {TOTAL_QUESTIONS}
@@ -52,6 +53,7 @@ answers = {questions[number].answers}
 userAnswer= {userAnswers ? userAnswers[number] : undefined}
 callback = {checkAnswer}
 />
+):null}
 <button className="next" onClick={nextQuestion}></button>
 
   </div>
